@@ -1,0 +1,47 @@
+
+
+<form class="stud-form" #studForm="ngForm" (ngSubmit)="onSubmitForm(studForm)">
+ <input type="hidden" name="StudentId" [(ngModel)]="service.selectedStudent.studentId"
+       #StudentId="ngModel">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input class="form-control" name="FirstName" [(ngModel)]="service.selectedStudent.FirstName"
+         #FirstName="ngModel" placeholder="First Name" required>
+       <div class="validation" *ngIf="FirstName.invalid && FirstName.touched">required</div>
+    </div>
+    <div class="form-group col-md-6">
+      <input class="form-control" name="LastName" [(ngModel)]="service.selectedStudent.LastName"
+        #LastName="ngModel" placeholder="Last Name" required>
+        <div class="validation" *ngIf="LastName.invalid && LastName.touched">required</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <input class="form-control" name="Major" #Major="ngModel" [(ngModel)]="service.selectedStudent.Major"
+     placeholder="Major">
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input class="form-control" name="StudCode" #StudCode="ngModel" 
+         [(ngModel)]="service.selectedStudent.StudCode" placeholder="StudCode">
+    </div>
+    <div class="form-group col-md-6">
+      <input class="form-control" name="ClassRoom" #ClassRoom="ngModel"
+         [(ngModel)]="service.selectedStudent.ClassRoom" placeholder="ClassRoom">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-8">
+      <button [disabled]="!studForm" type="submit" class="btn btn-lg btn-block btn-info">
+        <i class="fa fa-floppy-o"></i> Submit
+      </button>
+    </div>
+    <div class="form-group col-md-4">
+      <button type="button" class="btn btn-lg btn-block btn-secondary" (click)="resetForm(studForm)">
+        <i class="fa fa-repeat"></i> Reset Form
+      </button>
+    </div>
+  </div>
+</form>

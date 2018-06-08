@@ -1,0 +1,21 @@
+<table class="table table-sm table-hover">
+  <thead>
+   <tr>
+     <th>First Name - Last Name</th><th>StudCode</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let student of service.getStudents">
+    <td>{{student.FirstName}} - {{student.LastName}}</td>
+    <td>{{student.StudCode}}</td>
+    <td>
+      <a class="btn" (click)="onEdit(student)">
+        <i class="fa fa-pencil-square-o"></i>
+      </a>
+      <a class="btn text-danger" (click)="deleteStudent(student.StudentId)">
+        <i class="fa fa-trash-o"></i>
+      </a>
+    </td>
+  </tr>
+  <tbody>
+</table>

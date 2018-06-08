@@ -1,0 +1,4 @@
+/* You can add global styles to this file, and also import other style files */
+form.stud-form{background-color: #dbdbdb; border-radius: 3px; padding: 10px;}
+div.validation{ color: brown; text-align: center; text-decoration: underline;}
+button:hover, a.btn:hover{cursor:pointer; cursor:hand;}
